@@ -14,10 +14,10 @@ def load_data():
     # df = pd.read_csv('Data_for_LookerStudio_SB.csv')
     
     # 🔥 ทริคอัปเดตง่าย: นำลิงก์ Google Sheets ที่ Publish to the web (แบบ CSV) มาใส่ตรงนี้
-    # url = "https://docs.google.com/spreadsheets/d/e/.../pub?output=csv"
-    # df = pd.read_csv(url)
+    url = "https://docs.google.com/spreadsheets/d/e/.../pub?output=csv"
+    df = pd.read_csv(url)
     
-    df = pd.read_csv('Data_for_LookerStudio_SB.csv') # ใช้ไฟล์ที่ผมคลีนให้ไปก่อน
+    # df = pd.read_csv('Data_for_LookerStudio_SB.csv') # ใช้ไฟล์ที่ผมคลีนให้ไปก่อน
     return df
 
 df = load_data()
