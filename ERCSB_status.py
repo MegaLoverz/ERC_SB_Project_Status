@@ -25,7 +25,8 @@ st.markdown("""
 # 2. ฟังก์ชันโหลดข้อมูล
 @st.cache_data
 def load_data():
-    df = pd.read_csv('Data_for_LookerStudio_SB.csv')
+    url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSpktBCWEBI1wqdLrJlYUi9acpcbHIKXDimUWswIVTHPGPAzURZnEvcVq9oRByuyMpcDanWiNER8g_w/pub?gid=1294284872&single=true&output=csv"
+    df = pd.read_csv(url)
     # ล้างข้อมูลช่องว่างที่อาจติดมา
     df['สถานะ'] = df['สถานะ'].str.strip()
     df['Source'] = df['Source'].str.strip()
