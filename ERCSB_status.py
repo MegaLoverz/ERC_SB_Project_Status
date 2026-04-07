@@ -64,7 +64,6 @@ m1, m2, m3, m4 = st.columns(4)
 m1.metric("จำนวนโครงการทั้งหมด", len(filtered_df))
 m2.metric("กำลังดำเนินการ", len(filtered_df[filtered_df['สถานะ'] == 'ดำเนินโครงการต่อ']))
 m3.metric("ยกเลิกโครงการ", len(filtered_df[filtered_df['สถานะ'] == 'ยกเลิกโครงการ']))
-m4.metric("แหล่งข้อมูล (ชุด)", len(selected_source))
 
 st.markdown("---")
 
