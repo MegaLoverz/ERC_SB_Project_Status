@@ -29,19 +29,19 @@ def load_data():
     df = pd.read_csv(url)
     # ล้างข้อมูลช่องว่างที่อาจติดมา
     df['สถานะ'] = df['สถานะ'].str.strip()
-    df['Source'] = df['Source'].str.strip()
+    df['โครงการ'] = df['โครงการ'].str.strip()
     return df
 
 df = load_data()
 
-# 3. Sidebar: คอนโทรลหลัก (Source & Status)
+# 3. Sidebar: คอนโทรลหลัก (Project & Status)
 st.sidebar.header("🎯 ระบบกรองข้อมูลหลัก")
 
-# คอนโทรล 1: แหล่งที่มา
-selected_source = st.sidebar.multiselect(
-    "เลือกแหล่งที่มา (Source)", 
-    options=sorted(df['Source'].unique()), 
-    default=df['Source'].unique()
+# คอนโทรล 1: โครงการ
+selected_project = st.sidebar.multiselect(
+    "เลือกโครงการ", 
+    options=sorted(df['โครงการ'].unique()), 
+    default=df['โครงการ'].unique()
 )
 
 # คอนโทรล 2: สถานะโครงการ (ตามที่คุณต้องการ)
@@ -52,7 +52,7 @@ selected_status = st.sidebar.multiselect(
 )
 
 # กรองข้อมูลตามที่เลือกทั้งสองเงื่อนไข
-mask = (df['Source'].isin(selected_source)) & (df['สถานะ'].isin(selected_status))
+mask = (df['โครงการ'].isin(selected_project)) & (df['สถานะ'].isin(selected_status))
 filtered_df = df[mask]
 
 # 4. ส่วนหัวและ KPI Metrics
